@@ -1,0 +1,19 @@
+<html>
+  <script>
+    const amount = 1440;
+    const maxVal = 511;
+
+    window.onload = function() {
+      for (let i = 0; i < amount; i++) {
+        const angle = (i / amount) * Math.PI * 2;
+        const sin = Math.sin(angle);
+        const val = Math.floor(((sin + 1) / 2) * maxVal);
+        document.body.innerHTML += "0x" + val.toString(16) + ", ";
+        if (i % 16 === 15) {
+          document.body.innerHTML += "<br/>";
+        }
+      }
+    };
+  </script>
+  <body></body>
+</html>
