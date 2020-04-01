@@ -1,0 +1,12 @@
+.vs/
+*.iobj
+*.ipdb
+*.obj
+*.o
+*.pdb
+*.idb
+*.log
+*.tlog
+*.vex
+*.bin
+*/*.hex
