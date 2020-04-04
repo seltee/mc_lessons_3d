@@ -40,10 +40,10 @@ int main()
 
     angle += addAngle;
 
-    drawRect(60, 60, 30, angle, 3);
-    drawRect(60, 60, 40, -angle, 2);
-    drawRect(60, 60, 50, angle*2, 4);
-    drawRect(60, 60, 60, -angle*3, 5);
+    drawRect(60, 60, 20, angle, 3);
+    drawRect(60, 60, 30, -angle, 2);
+    drawRect(60, 60, 40, angle*2, 4);
+    drawRect(60, 60, 50, -angle*3, 5);
 
     engine.drawWindow();
     sync();

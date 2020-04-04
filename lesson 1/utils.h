@@ -1,1 +1,1 @@
-extern const short int sinTable[1440];
+extern const int sinTable[1440];

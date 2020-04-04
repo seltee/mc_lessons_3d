@@ -1,13 +1,14 @@
 <html>
   <script>
     const amount = 1440;
-    const maxVal = 511;
+    const maxVal = 512; // 9 bit
+    //const maxVal = 1024; // 10 bit
 
     window.onload = function() {
       for (let i = 0; i < amount; i++) {
         const angle = (i / amount) * Math.PI * 2;
         const sin = Math.sin(angle);
-        const val = Math.floor(((sin + 1) / 2) * maxVal);
+        const val = Math.floor((sin + 1) * maxVal);
         document.body.innerHTML += "0x" + val.toString(16) + ", ";
         if (i % 16 === 15) {
           document.body.innerHTML += "<br/>";

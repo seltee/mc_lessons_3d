@@ -1,4 +1,5 @@
 #include "f_math.h"
+#include "utils.h"
 
 int FPMake(int number){
   return number << 9;
@@ -27,7 +28,7 @@ int sin(int FPAngle)
   while (s >= 1440)
     s -= 1440;
 
-  return sinTable[s] - (1 << 8);
+  return sinTable[s] - (1 << 9);
 }
 
 int cos(int FPAngle)
