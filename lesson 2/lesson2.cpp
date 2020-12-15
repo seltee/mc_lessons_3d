@@ -46,7 +46,7 @@ void projectPoint(int viewModelProjectionMatrix[16], const int vertex[3], int ou
   MMatrixMultipyVector(viewModelProjectionMatrix, vertexEx, out);
 }
 
-// Draw out 3 box
+// Draw the box
 void drawBox(int x, int y, int z, int rx, int ry)
 {
   int dumpMatrix[16];
@@ -74,7 +74,7 @@ void drawBox(int x, int y, int z, int rx, int ry)
 
   MCopy(dumpMatrix, modelMatrix);
 
-  // Drawing our 12 triangles of out box
+  // Drawing our 12 triangles of our box
   for (int i = 0; i < 12; i++)
   {
     int pv1 = cubeMesh[i][0];

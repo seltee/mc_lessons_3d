@@ -1,8 +1,9 @@
 #include "f_math.h"
+#include "../tools/core.h"
 
 int FPMake(int number)
 {
-  return number >= 0 ? number << FSHIFT : (number << FSHIFT) + MAX_FRACTION;
+  return number >= 0 ? (number << FSHIFT) : (number << FSHIFT) + MAX_FRACTION;
 }
 
 int FPFloor(int FPNumber)
@@ -24,6 +25,10 @@ int FPMultiply(int FPNumber1, int FPNumber2)
 
 int FPDivide(int FPNumber1, int FPNumber2)
 {
+  if (FPNumber2 == 0)
+  {
+    return 0;
+  }
   return FPMultiply(FPNumber1, (ONE * ONE) / FPNumber2);
 }
 
@@ -32,14 +37,10 @@ int abs(int c)
   return c >= 0 ? c : -c;
 }
 
-short int abs(short int c)
-{
-  return c >= 0 ? c : -c;
-}
-
 int sin(int FPAngle)
 {
-  int s = FPAngle >> FSHIFT << 2;
+  int s = (FPAngle >> FSHIFT) << 2;
+
   while (s < 0)
     s += 1440;
 
@@ -56,10 +57,7 @@ int cos(int FPAngle)
 
 int ctg(int FPAngle)
 {
-  int sn = sin(FPAngle);
-  if (sn != 0){
-    return FPDivide(cos(FPAngle), sn);
-  } else {
-    return 0;
-  }
+  int nCos = cos(FPAngle);
+  int nSin = sin(FPAngle);
+  return FPDivide(nCos, nSin);
 }

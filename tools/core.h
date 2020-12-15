@@ -1,4 +1,5 @@
 #pragma once
+#pragma clang diagnostic ignored "-Wignored-attributes"
 
 typedef char int8;
 typedef short int16;

@@ -105,9 +105,9 @@ void MCopy(int source[16], int dest[16])
 void MPerspective(int matrix[16])
 {
   int aspect = FPMake(1);
-  int fovy = FPMake(100);
+  int fovy = FPMake(120);
   int near = FPMake(1);
-  int far = FPMake(80);
+  int far = FPMake(200);
   int divfov = FPDivide(fovy, FPMake(2));
   int ctgCalc = ctg(divfov);
   int Q = FPDivide(far, far - near);

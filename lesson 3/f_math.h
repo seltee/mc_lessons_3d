@@ -3,6 +3,7 @@
 // This is out fixed point contants. FSHIFT states how much bits will be after point
 #define FSHIFT 9
 #define ONE (1 << FSHIFT)
+#define HALF (ONE / 2)
 #define MAX_FRACTION (ONE - 1)
 
 // Make fixed point from integer
@@ -22,7 +23,6 @@ int FPDivide(int FPNumber1, int FPNumber2);
 
 // Remove sign
 int abs(int c);
-short int abs(short int c);
 
 int sin(int FPAngle);
 int cos(int FPAngle);
